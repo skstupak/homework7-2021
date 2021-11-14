@@ -9,6 +9,8 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
+	document.querySelector("#volume").innerHTML = "100" + "%"
+	//video.volume = (this.value/100)
 	// this is where the volume play should be
 });
 
@@ -43,7 +45,7 @@ document.querySelector("#mute").addEventListener("click", function() {
 	}
 });
 document.querySelector("#skip").addEventListener("click", function() {
-	if (video.currentTime() < video.duration - 15) {
+	if (video.currentTime < video.duration - 15) {
 		video.currentTime += 15
 		// console.log("Skipped Ahead")
 	}
