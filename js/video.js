@@ -8,8 +8,10 @@ window.addEventListener("load", function() {
 
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
+	document.querySelector("#volume").innerHTML = (video.volume * 100)+ "%"
+	//video.volume = (this.value/100)
 	video.play();
-	document.querySelector("#volume").innerHTML = "100" + "%"
+	
 	//video.volume = (this.value/100)
 	// this is where the volume play should be
 });
@@ -51,6 +53,7 @@ document.querySelector("#skip").addEventListener("click", function() {
 	}
 	else {
 		video.currentTime = 0
+		console.log("start from 0")
 	}
 	console.log(video.duration)
 	console.log("Current Location" + video.currentTime)
